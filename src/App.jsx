@@ -1,20 +1,13 @@
-import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
 function App() {
-  const [data, setData] = useState()
-
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch('https://rickandmortyapi.com/api/character')
-      const data = await res.json()
-      setData(data)
-    }
-    getData()
-  }, [])
-
   return (
-    <div>
-    </div>
+    <Routes>
+      <Route path="/" element={ <Home/> }/>
+      <Route path="*" element={<NotFound/>}/>
+    </Routes>
   )
 }
 
