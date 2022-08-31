@@ -42,23 +42,11 @@ span:before{
   animation: rotateIn 0.5s ease-out;
 }
 
-p {
+.phrase {
   text-align: center;
   font-style: italic;
   font-weight: 400;
   color: #fff;
   margin-top: 0;
   line-height: 22px;
-}
-
- 
-button {
-  background-color: #f96e4d;
-  border: 0;
-  padding: 11px 22px;
-  border-radius: 50px;
-  color: #fff;
-  margin-top: 10px;
-  cursor: pointer;
-  font-weight: 900;
 }

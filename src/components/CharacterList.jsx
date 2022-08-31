@@ -6,9 +6,9 @@ const CardContent = styled.div`
   padding: 50px;
   position: absolute;
   display: grid;
-  gap: 50px;
+  gap: 20px;
   justify-items : center;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   align-content : center;
 `
 

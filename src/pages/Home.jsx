@@ -2,17 +2,20 @@ import styled from 'styled-components'
 import CharacterList from '../components/CharacterList'
 import Nav from '../components/Nav'
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 
 function App() {
   return (
     <>
-  <div className="space"></div>
-    <Nav/>
-    <div>
-      <CharacterList/>
-    </div>
+      <Nav/>
+      <Container>
+        <CharacterList/>
+      </Container>
     </>
-  
   )
 }
 
