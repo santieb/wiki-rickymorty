@@ -15,11 +15,11 @@
 }
 
 
-span:first-letter{
+.span:first-letter{
   letter-spacing: 12vmax; 
 }
 
-span {
+.span {
   position: relative;
   color: #fff;
   font-weight: 900;
@@ -30,7 +30,7 @@ span {
   height: max-content;
 }
  
-span:before{
+.span:before{
   content:'';
   background-image: url('https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png');
   position: absolute;

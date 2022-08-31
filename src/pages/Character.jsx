@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import images from '../assets/images'
 
 const ImageContainer = styled.div`
   background-image: url("../../fondo-de-rick-y-morty-papel-pintado-1920x1280_38.jpg");
@@ -12,8 +11,7 @@ const ImageContainer = styled.div`
 
 const Card = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 700px;
+  flex-direction: column;
   color: black;
   background-color: white;
   border-radius: 10px;
@@ -21,23 +19,16 @@ const Card = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  &&:hover {
-    box-shadow: 0px 0px 20px 0px #000;
-  }
+  margin: 0;
 `
 
 const Status = styled.p`
-  font-weight: 500;
-`
-
-const Circle = styled.div`
-  border-radius: 100%;
-  width: 10px;
-  height: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
+  font-weight: 700;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
   background-color: ${props => {
     switch (props.status) {
       case 'Alive': 
@@ -53,31 +44,41 @@ const Circle = styled.div`
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0;
 `
 
 const CardImage = styled.img`
   border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 `
 
-const Division = styled.div`
+const HeaderCard = styled.div`
   display: flex;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 const Title = styled.div`
   font-size: 1.5em;
-  margin: 1em;
+  margin: 0.5em;
+  font-weight: 700;
+  margin: 0;
 `
 
-const Genre = styled.p`
-  font-size: 1.5em;
-  background-color: #7676f7;
+const Paragraph = styled.p`
+  margin: 0.5em;
+`
+
+const Span = styled.span`
+  font-weight: bolder;
 `
 
 const Character = () => {
   const { id } = useParams()
   const [character, setCharacter] = useState('');
-  const { name, image, species, status, gender, origin, location } = character
+  const { name, image, species, status, gender, origin, location, episode } = character
   console.log(character)
   const locationn = location?.name
   const originn = origin?.name
@@ -96,21 +97,15 @@ const Character = () => {
       <ImageContainer>
         <Card>
           <CardImage src={image}></CardImage>
-
           <CardContent>
-            <Title>{name}</Title>
-            <Division>
-              <Circle status={status}></Circle>
-              <Status>{`${status}`}</Status>
-            </Division>
-            <Division>
-              <img src={images.mutation}></img>
-              <p>{species}</p>
-            </Division>
-            
-            <Genre>{gender}</Genre>
-            <p>{locationn}</p>
-            <p>{originn}</p>
+            <HeaderCard>
+              <Title>{name}</Title>
+              <Status status={status}>{status}</Status>
+            </HeaderCard>
+            <Paragraph><Span>Species: </Span>{species}</Paragraph>
+            <Paragraph><Span>Gender: </Span>{gender}</Paragraph>
+            <Paragraph><Span>Location: </Span>{locationn}</Paragraph>
+            <Paragraph><Span>Origin: </Span>{originn}</Paragraph>
           </CardContent>
         </Card>
       </ImageContainer>
