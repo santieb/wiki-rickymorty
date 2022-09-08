@@ -40,11 +40,12 @@ const Name = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
   margin-left: 5%;
+  color: white;
 `
 
 const Character = ({ character }) => {
   const navigate = useNavigate()
-  const { name, image, status, species, id } = character
+  const { name, image, id } = character
   return (
     <Card onClick={() => navigate(`/character/${id}`)}>
       <Image src={image}/>

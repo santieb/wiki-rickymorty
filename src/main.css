@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #24242c;
+  background-color: #ffffff;
   height: 100%;
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: 'Roboto', sans-serif;
 }
 

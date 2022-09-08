@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { useState, useEffect } from 'react'
 import Character from './Character'
 
 const CardContent = styled.div`
@@ -12,18 +11,7 @@ const CardContent = styled.div`
   align-content : center;
 `
 
-const CharacterList = () => {
-  const [characters, setCharacters] = useState()
-
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch('https://rickandmortyapi.com/api/character')
-      const data = await res.json()
-      setCharacters(data.results)
-    }
-    getData()
-  }, [])
-
+const CharacterList = ({ characters }) => {
   return (
      <CardContent>
       {characters ? characters.map(character => <Character key={character.id} character={character}/>) : null}
