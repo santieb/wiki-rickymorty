@@ -1,10 +1,10 @@
 const constants = {
-  status: [
+  STATUS: [
     'Alive',
     'Dead',
     'Unknown'
   ],
-  species: [
+  SPECIES: [
     'Human',
     'Alien',
     'Humanoid',
@@ -17,7 +17,7 @@ const constants = {
     'Cronenberg',
     'Planet',
   ],
-  genders: [
+  GENDERS: [
     'female',
     'male',
     'genderless',

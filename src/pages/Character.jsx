@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ImageContainer = styled.div`
-  background-image: url("../../fondo-de-rick-y-morty-papel-pintado-1920x1280_38.jpg");
+  background-image: url("../../background-character.jpg");
   background-color: #d6a8a8;
   height: 100vh;
   width: 100vw;
@@ -78,8 +78,8 @@ const Span = styled.span`
 const Character = () => {
   const { id } = useParams()
   const [character, setCharacter] = useState('');
-  const { name, image, species, status, gender, origin, location, episode } = character
-  console.log(character)
+  const { name, image, species, status, gender, origin, location } = character
+  const navigate = useNavigate()
   const locationn = location?.name
   const originn = origin?.name
 
@@ -95,6 +95,7 @@ const Character = () => {
   return (
     <>
       <ImageContainer>
+        <button onClick={() => navigate('/')}>Back</button>
         <Card>
           <CardImage src={image}></CardImage>
           <CardContent>

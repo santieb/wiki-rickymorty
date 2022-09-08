@@ -7,6 +7,7 @@ import Accordion from '../components/Accordion'
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: row;
 `
 
 const Input = styled.input`
@@ -44,8 +45,14 @@ function App() {
     setLoading(false)
   }, [api])
 
+  const clearFilters = () => {
+    setStatus('')
+    setGender('') 
+    setSpecies('')
+  }
+
   if (loading) return <p>Cargando..</p>
-  console.log(data)
+
   return (
     <>
       <Nav/>
@@ -57,8 +64,17 @@ function App() {
         />
       </Division>
       <Container>
-        <Accordion setStatus={setStatus} setGender={setGender} setSpecies={setSpecies}/>
-        { data ? <CharacterList characters={data} /> : <Division>Characters not found</Division> }
+      { data ? 
+        <>
+          <Accordion status={status} gender={gender} species={species} setStatus={setStatus} setGender={setGender} setSpecies={setSpecies}/>
+          <CharacterList characters={data} /> 
+        </>
+        :
+        <> 
+          <button type="button" onClick={() => clearFilters()}>Clear filter</button>
+          <Division>Characters not found</Division> 
+        </>
+      }
       </Container>
     </>
   )

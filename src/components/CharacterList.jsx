@@ -3,7 +3,6 @@ import Character from './Character'
 
 const CardContent = styled.div`
   padding: 50px;
-  position: absolute;
   display: grid;
   gap: 20px;
   justify-items : center;
