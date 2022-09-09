@@ -1,20 +1,17 @@
-import styled from 'styled-components'
-import Character from './Character'
+import Card from './Card'
+import Pagination from './Pagination'
 
-const CardContent = styled.div`
-  padding: 50px;
-  display: grid;
-  gap: 20px;
-  justify-items : center;
-  grid-template-columns: auto auto auto auto;
-  align-content : center;
-`
-
-const CharacterList = ({ characters }) => {
+const CharacterList = ({ characters, pageNumber, info, updatePageNumber }) => {
   return (
-     <CardContent>
-      {characters ? characters.map(character => <Character key={character.id} character={character}/>) : null}
-    </CardContent>
+     <>
+      {characters ? characters.map(character => <Card key={character.id} character={character}/>) : null}
+      <Pagination 
+        info={info}
+        pageNumber={pageNumber}
+        updatePageNumber={updatePageNumber}
+        characters={characters} 
+      />
+    </>
   )
 }
 

@@ -45,7 +45,7 @@ button {
 
 .faq__heading { 
   color: var(--blue-dark);
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center; 
 }
@@ -70,7 +70,7 @@ button {
 
 .faq__detail {
   border-bottom: 1px solid hsl(240, 5%, 91%);
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
   padding: 5px 0 20px 0;
 }
 
@@ -126,12 +126,11 @@ details[open] .faq__summary:after {
   position: absolute;
   text-align: left;
   top: 0;
-  width: 90%;
 }
 
 .faq__summary {
   color: var(--blue-dark);
-  font-size: 1.4rem; 
+  font-size: 1.3rem; 
 }
 
 .faq__text {
@@ -147,42 +146,8 @@ details[open] .faq__summary:after {
 
 
 @media (min-width: 900px) {
-  .faq {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      min-width: 900px;
-      padding: 0;
-      margin: 0;
-  }
-
-  .faq__logo__holder { 
-      display: flex;
-      align-items: center;
-      height: 100%;
-      justify-content: center;
-  }
-
   .faq__holder {
-      margin: 0 50px;
-      padding: 70px 0;
-      max-width: 350px;
       width: 350px;
-  }
-
-  .faq__logo {
-      display: flex;
-      align-items: center;
-      background-image: url(https://bobmatyas.github.io/fm-faq-accordion/images/illustration-woman-online-desktop.svg), url(https://bobmatyas.github.io/fm-faq-accordion/images/bg-pattern-desktop.svg);
-      background-position: -75px center, -571px -270px;
-      background-size: 100%, 200%;
-      height: 100%;
-      min-width: 300px;
-      margin: 0;
-      padding: 0;
-      width: 525px;
-      max-width: 500px;
-      position: relative;
   }
 
   .faq__heading {
@@ -198,12 +163,64 @@ details[open] .faq__summary:after {
       left: -80px;    
   }
 
-  .faq__text {
-      margin: 0 0 10px 0;
-  }
-
   .faq__detail {
       margin: 10px 0 0 0 0;
       padding: 0;
   }
+}
+
+.pagination {
+  display: flex;
+  margin: 0 auto;
+}
+
+.paginationButtonText {
+  background-color: #f96e4d;
+  border: 0;
+  padding: 10px;
+  border-radius: 50px;
+  color: #fff;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.paginationButton {
+  background-color: #f96e4d;
+  border: 0;
+  padding: 5px 2px;
+  border-radius: 50px;
+  color: #fff;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.paginationButtonActive {
+  background-color: #f96e4d;
+  border: 0;
+  padding: 5px 2px;
+  border-radius: 50px;
+  color: rgb(0, 0, 0);
+  margin: 3px;
+  cursor: pointer;
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1rem;
+	margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  width: 95%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+  border: 1px solid hsl(240, 5%, 70%);
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
 }

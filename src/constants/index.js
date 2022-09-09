@@ -18,10 +18,10 @@ const constants = {
     'Planet',
   ],
   GENDERS: [
-    'female',
-    'male',
-    'genderless',
-    'unknown'
+    'Female',
+    'Male',
+    'Genderless',
+    'Unknown'
   ]
 }
 
