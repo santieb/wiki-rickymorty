@@ -169,41 +169,6 @@ details[open] .faq__summary:after {
   }
 }
 
-.pagination {
-  display: flex;
-  margin: 0 auto;
-}
-
-.paginationButtonText {
-  background-color: #f96e4d;
-  border: 0;
-  padding: 10px;
-  border-radius: 50px;
-  color: #fff;
-  margin: 3px;
-  cursor: pointer;
-}
-
-.paginationButton {
-  background-color: #f96e4d;
-  border: 0;
-  padding: 5px 2px;
-  border-radius: 50px;
-  color: #fff;
-  margin: 3px;
-  cursor: pointer;
-}
-
-.paginationButtonActive {
-  background-color: #f96e4d;
-  border: 0;
-  padding: 5px 2px;
-  border-radius: 50px;
-  color: rgb(0, 0, 0);
-  margin: 3px;
-  cursor: pointer;
-}
-
 .form__input {
   font-family: 'Roboto', sans-serif;
   color: #333;
@@ -223,4 +188,8 @@ details[open] .faq__summary:after {
   visibility: hidden;
   -webkit-transform: translateY(-4rem);
   transform: translateY(-4rem);
+}
+
+.hide {
+  display: none;
 }

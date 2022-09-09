@@ -21,7 +21,10 @@ const Content = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   max-width: 50%;
-  min-width: 50%;
+
+  @media (max-width: 800px) {
+    min-width: 100%;
+  }
 `
 
 function App() {
@@ -34,6 +37,10 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [pageNumber, updatePageNumber] = useState(1)
  
+  useEffect(() => {
+    updatePageNumber(1)
+  }, [status, gender, species, search])
+
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
@@ -52,6 +59,7 @@ function App() {
     setStatus('')
     setGender('') 
     setSpecies('')
+    updatePageNumber(1)
   }
 
   if (loading) return <p>Cargando..</p>
@@ -59,14 +67,24 @@ function App() {
   return (
     <>
       <Container>
-      <SideBar status={status} gender={gender} species={species} setStatus={setStatus} setGender={setGender} setSpecies={setSpecies} setSearch={setSearch}/>
+      <SideBar 
+        status={status} 
+        gender={gender} 
+        species={species} 
+        setStatus={setStatus} 
+        setGender={setGender} 
+        setSpecies={setSpecies} 
+        setSearch={setSearch}
+        clearFilters={clearFilters} 
+      />
       <Content>
         { data ? 
             <CharacterList 
               info={info}
               pageNumber={pageNumber}
               updatePageNumber={updatePageNumber}
-              characters={data} />
+              characters={data}
+            />
           :
             <NotFoundMessage clearFilters={clearFilters}/>
         }

@@ -1,13 +1,7 @@
 import constants from '../constants'
 
-const Accordion = ({ status, gender, species, setStatus, setSpecies, setGender }) => {
+const Accordion = ({ status, gender, species, setStatus, setSpecies, setGender, clearFilters }) => {
   const { SPECIES, GENDERS, STATUS } = constants
-
-  const clearFilters = () => {
-    setStatus('')
-    setGender('')
-    setSpecies('')
-  }
 
   return (
     <div class="faq__holder">

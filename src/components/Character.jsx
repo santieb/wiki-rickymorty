@@ -1,13 +1,4 @@
 import styled from 'styled-components'
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from "react-router-dom";
-
-const ImageContainer = styled.div`
-  background-image: url("../../background-character.jpg");
-  background-color: #d6a8a8;
-  height: 100vh;
-  width: 100vw;
-`
 
 const Card = styled.div`
   display: flex;
@@ -75,42 +66,27 @@ const Span = styled.span`
   font-weight: bolder;
 `
 
-const Character = () => {
-  const { id } = useParams()
-  const [character, setCharacter] = useState('');
+
+const Character = ({ character }) => {
   const { name, image, species, status, gender, origin, location } = character
-  const navigate = useNavigate()
+
   const locationn = location?.name
   const originn = origin?.name
 
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      const data = await res.json()
-      setCharacter(data)
-    }
-    getData()
-  }, [])
-
   return (
-    <>
-      <ImageContainer>
-        <button onClick={() => navigate('/')}>Back</button>
-        <Card>
-          <CardImage src={image}></CardImage>
-          <CardContent>
-            <HeaderCard>
-              <Title>{name}</Title>
-              <Status status={status}>{status}</Status>
-            </HeaderCard>
-            <Paragraph><Span>Species: </Span>{species}</Paragraph>
-            <Paragraph><Span>Gender: </Span>{gender}</Paragraph>
-            <Paragraph><Span>Location: </Span>{locationn}</Paragraph>
-            <Paragraph><Span>Origin: </Span>{originn}</Paragraph>
-          </CardContent>
-        </Card>
-      </ImageContainer>
-    </>
+    <Card>
+      <CardImage src={image}></CardImage>
+      <CardContent>
+        <HeaderCard>
+          <Title>{name}</Title>
+          <Status status={status}>{status}</Status>
+        </HeaderCard>
+        <Paragraph><Span>Species: </Span>{species}</Paragraph>
+        <Paragraph><Span>Gender: </Span>{gender}</Paragraph>
+        <Paragraph><Span>Location: </Span>{locationn}</Paragraph>
+        <Paragraph><Span>Origin: </Span>{originn}</Paragraph>
+      </CardContent>
+    </Card>
   )
 }
 
