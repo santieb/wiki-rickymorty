@@ -36,7 +36,7 @@ const Content = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 50%;
+  width: 50%;
 
   @media (max-width: 800px) {
     min-width: 100%;
