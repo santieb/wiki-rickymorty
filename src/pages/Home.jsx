@@ -1,31 +1,10 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components'
+
+import { Container, Content } from '../styles/styled'
 import SideBar from '../components/SideBar'
 import CharacterList from '../components/CharacterList'
 import NotFoundMessage from '../components/NotFound'
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    padding-top: 0px;
-  }
-`
-
-const Content = styled.div`
-  gap: 10px;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  max-width: 50%;
-
-  @media (max-width: 800px) {
-    min-width: 100%;
-  }
-`
+import Spinner from '../components/Spinner'
 
 function App() {
   const [data, setData] = useState('')
@@ -52,7 +31,11 @@ function App() {
       setInfo(data.info)
     }
     getData()
-    setLoading(false)
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+
   }, [api])
 
   const clearFilters = () => {
@@ -61,8 +44,6 @@ function App() {
     setSpecies('')
     updatePageNumber(1)
   }
-
-  if (loading) return <p>Cargando..</p>
 
   return (
     <>
@@ -78,14 +59,14 @@ function App() {
         clearFilters={clearFilters} 
       />
       <Content>
-        { data ? 
+        { loading ? <Spinner/> :
+          data ?  
             <CharacterList 
-              info={info}
-              pageNumber={pageNumber}
-              updatePageNumber={updatePageNumber}
-              characters={data}
-            />
-          :
+            info={info}
+            pageNumber={pageNumber}
+            updatePageNumber={updatePageNumber}
+            characters={data}
+          /> :
             <NotFoundMessage clearFilters={clearFilters}/>
         }
       </Content>

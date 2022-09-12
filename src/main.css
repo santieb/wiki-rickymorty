@@ -22,6 +22,10 @@ button {
   font-weight: 900;
 }
 
+button:hover {
+  background-color: orange;
+}
+
 :root {
   --purple: #7276e1;
   --orange: hsl(14, 88%, 65%);

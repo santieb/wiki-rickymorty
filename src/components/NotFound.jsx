@@ -1,18 +1,6 @@
 import '../NotFound.css'
 import { useParams, useNavigate } from "react-router-dom";
-import styled from 'styled-components'
-
-const Container = styled.div`
-  position: ${props => props.isPage ? 'absolute' : 'flex'};
-  margin: auto;
-  top: 50%;
-  transform: ${props => props.isPage ? 'translateY(-50%)' : ''};
-  left: 0;
-  right: 0;
-  width: fit-content;
-  text-align: center;
-  z-index: 4;
-`
+import { NotFoundCotainer } from '../styles/styled'
 
 const NotFound = ({ clearFilters }) => {
   const navigate = useNavigate()
@@ -22,7 +10,7 @@ const NotFound = ({ clearFilters }) => {
 
   return (
     <>
-      <Container isPage={Object.entries(params).length !== 0}>
+      <NotFoundCotainer isPage={Object.entries(params).length !== 0}>
         <div>
           <span className="span">44</span>
         </div>
@@ -32,7 +20,7 @@ const NotFound = ({ clearFilters }) => {
         {isPage ? 
            <button onClick={() => navigate('/')} type="button">GET ME HOME</button>:
            <button onClick={() => clearFilters()} type="button">Clear Filters</button>}
-      </Container>
+      </NotFoundCotainer>
     </>
   )
 }

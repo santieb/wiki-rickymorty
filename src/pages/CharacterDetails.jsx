@@ -1,13 +1,7 @@
-import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from "react-router-dom"
 import Character from '../components/Character'
-
-const ImageContainer = styled.div`
-  background-image: url("../../background-character.jpg");
-  height: 100vh;
-  width: 100vw;
-`
+import { ImageContainer } from '../styles/styled'
 
 const CharacterDetails = () => {
   const navigate = useNavigate()
