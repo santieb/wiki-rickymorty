@@ -13,17 +13,17 @@ const Accordion = ({ status, gender, species, setStatus, setSpecies, setGender, 
       <details className="faq__detail">
         <summary className="faq__summary"><span className="faq__question">Status</span></summary>
 
-        {STATUS.map(element => <button type="button" onClick={() => setStatus(element)}>{element}</button>)}
+        {STATUS.map(element => <button key={element} type="button" onClick={() => setStatus(element)}>{element}</button>)}
       </details>
 
       <details className="faq__detail">
         <summary className="faq__summary"><span className="faq__question">Species</span></summary>
-        {SPECIES.map(element => <button type="button" onClick={() => setSpecies(element)}>{element}</button>)}
+        {SPECIES.map(element => <button key={element} type="button" onClick={() => setSpecies(element)}>{element}</button>)}
       </details>
 
       <details className="faq__detail">
         <summary className="faq__summary"><span className="faq__question">Gender</span></summary>
-        {GENDERS.map(element => <button type="button" onClick={() => setGender(element)}>{element}</button>)}
+        {GENDERS.map(element => <button key={element} type="button" onClick={() => setGender(element)}>{element}</button>)}
       </details>
 
     </div>

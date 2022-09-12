@@ -1,4 +1,4 @@
-import '../NotFound.css'
+import '../styles/NotFound.css'
 import { useParams, useNavigate } from "react-router-dom";
 import { NotFoundCotainer } from '../styles/styled'
 
