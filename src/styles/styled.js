@@ -39,6 +39,7 @@ const Content = styled.div`
   width: 50%;
 
   @media (max-width: 800px) {
+    padding-left: 10px;
     min-width: 100%;
   }
 `

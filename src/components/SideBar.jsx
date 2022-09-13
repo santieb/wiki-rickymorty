@@ -6,7 +6,7 @@ const SideBar = ({ status, gender, species, setStatus, setSpecies, setGender, se
   return (
     <SideBarCotainer>
       <img style={{ width: '350px'}} src={images.title}></img>
-      <h2 style={{ fontSize: '2rem'}}>Characters</h2>
+      <h2 className="faq__heading">Characters</h2>
       <input type='text'
         placeholder='Search for characters'
         onChange={({ target }) => setSearch(target.value)}
