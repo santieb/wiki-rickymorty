@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Modal from 'react-modal';
-import { Card, HeaderCard, CardContent, Title, Status, Paragraph, Span } from '../styles/styled'
+import { Card, HeaderCard, CardContent, Title, Status, Paragraph, Span } from '../styles/character'
 
 const customStyles = {
   content: {
