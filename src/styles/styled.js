@@ -37,17 +37,12 @@ const Content = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 50%;
+  flex-basis: 50%;
 
   @media (max-width: 800px) {
     padding-left: 10px;
     min-width: 100%;
   }
-`
-
-const ImageContainer = styled.div`
-  background-image: url("../../background-character.jpg");
-  height: 100vh;
-  width: 100vw;
 `
 
 const Card = styled.div`
@@ -58,33 +53,20 @@ const Card = styled.div`
   }
 `
 
-const CardCharacter = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: black;
-  background-color: white;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-`
-
 const Status = styled.p`
   font-weight: 700;
   color: white;
   background-color: green;
   border-radius: 10px;
   padding: 10px;
-  margin: 0;
+  margin: 10px 0 0 0;
   background-color: ${props => {
     switch (props.status) {
-      case 'Alive': 
+      case 'Alive':
         return 'green';
-      case 'Dead': 
+      case 'Dead':
         return 'red';
-      case 'unknown': 
+      case 'unknown':
         return 'gray';
     }
   }}
@@ -92,18 +74,14 @@ const Status = styled.p`
 
 const CardContent = styled.div`
   display: flex;
+  width: 300px;
   flex-direction: column;
   margin: 0;
 `
 
-const CardImage = styled.img`
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-`
-
 const HeaderCard = styled.div`
   display: flex;
-  margin: 10px;
+  gap: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,7 +95,7 @@ const Title = styled.div`
 `
 
 const Paragraph = styled.p`
-  margin: 0.5em;
+  margin: 1em 0 0 0;
 `
 
 const Span = styled.span`
@@ -130,10 +108,7 @@ export {
   NotFoundCotainer,
   Content,
   Card,
-  CardCharacter,
-  ImageContainer,
   CardContent,
-  CardImage,
   Status,
   HeaderCard,
   Title,
