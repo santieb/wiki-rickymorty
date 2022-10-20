@@ -1,6 +1,6 @@
 const Pagination = ({ pageNumber, info, updatePageNumber }) => {
   return (
-    <div style={{ margin: "0 auto"}}>
+    <div style={{ margin: "0 auto 5px auto"}}>
       <button 
         className={pageNumber === 1 ? 'hide' : ''} 
         onClick={() => updatePageNumber(pageNumber-1)}>

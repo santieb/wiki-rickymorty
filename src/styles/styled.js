@@ -49,7 +49,7 @@ const Card = styled.div`
   height: 180px;
   cursor: pointer;
   &&:hover {
-    box-shadow: 0px 10px 10px -6px black;
+    transform: scale(0.9, 0.9);
   }
 `
 

@@ -34,7 +34,7 @@ function App() {
 
     setTimeout(() => {
       setLoading(false)
-    }, 500)
+    }, 600)
 
   }, [api])
 
